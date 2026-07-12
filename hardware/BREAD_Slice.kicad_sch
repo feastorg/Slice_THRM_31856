@@ -2474,7 +2474,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "SparkFun-DiscreteSemi:AP63205"
+		(symbol "KMLib_IC_Power:AP63205WU-7_Buck_Regulator"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -2689,7 +2689,7 @@
 					(justify left top)
 				)
 			)
-			(property "Footprint" "SparkFun-LED:WS2812-5050-4PIN"
+			(property "Footprint" "KMLib_IC_SMD:WS2812-5050-4PIN"
 				(at 1.27 -7.62 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2929,7 +2929,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "kml-custom:CD74HC4053E"
+		(symbol "KMLib_IC_Analog:CD74HC4053E_Multiplexer"
 			(pin_names
 				(offset 1.016)
 			)
@@ -13658,7 +13658,7 @@
 		)
 	)
 	(symbol
-		(lib_id "SparkFun-DiscreteSemi:AP63205")
+		(lib_id "KMLib_IC_Power:AP63205WU-7_Buck_Regulator")
 		(at 31.75 96.52 0)
 		(unit 1)
 		(body_style 1)
@@ -13750,7 +13750,7 @@
 		)
 	)
 	(symbol
-		(lib_id "kml-custom:CD74HC4053E")
+		(lib_id "KMLib_IC_Analog:CD74HC4053E_Multiplexer")
 		(at 166.37 148.59 0)
 		(unit 1)
 		(body_style 1)
@@ -13781,7 +13781,7 @@
 				)
 			)
 		)
-		(property "Footprint" "KML-Custom:DIP254P762X508-16"
+		(property "Footprint" "KMLib_IC_THT:DIP254P762X508-16"
 			(at 166.37 148.59 0)
 			(hide yes)
 			(show_name no)
@@ -14298,7 +14298,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "KML-Custom:Thermal Pad"
+		(property "Footprint" "KMLib_Mounting:Thermal_Pad"
 			(at 45.72 112.0648 0)
 			(hide yes)
 			(show_name no)
@@ -15452,7 +15452,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SparkFun-LED:WS2812-5050-4PIN"
+		(property "Footprint" "KMLib_IC_SMD:WS2812-5050-4PIN"
 			(at 49.53 76.2 0)
 			(hide yes)
 			(show_name no)
