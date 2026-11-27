@@ -8,9 +8,11 @@
 	)
 	(paper "A4")
 	(title_block
-		(title "BREAD Slice / 4-Channel Thermocouple (MAX31856) / SLC_THRM_31856")
+		(title "4-Channel Thermocouple (MAX31856)")
 		(date "2026-11")
 		(rev "G3 r1")
+		(company "BREAD Slice")
+		(comment 1 "SLC_THRM_31856")
 	)
 	(layers
 		(0 "F.Cu" signal)
