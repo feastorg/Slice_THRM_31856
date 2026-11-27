@@ -13679,8 +13679,8 @@
 				)
 			)
 		)
-		(property "Value" ""
-			(at 31.75 96.52 0)
+		(property "Value" "AP63205WU-7"
+			(at 31.75 112.395 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
