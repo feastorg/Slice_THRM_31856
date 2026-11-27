@@ -4042,7 +4042,7 @@
 			)
 		)
 	)
-	(text "All logic pins here are 3.3 V.\nLevel shifting is on the root sheet:\nCS, SCK, SDI come from U8 (74LVC245A,\n+3V3); SDO, DRDY go to U9 (74AHCT245,\n+5V); FAULT goes to the U2 mux.\nC10 sits at AVDD (pin 5), C11 at DVDD\n(pin 8): 0.1 uF each, data sheet p.10."
+	(text "All logic pins here are 3.3 V.\nLevel shifting is on the root sheet:\nCS, SCK, SDI come from U8 (74LVC245A,\n+3V3); SDO, DRDY go to U9 (74AHCT245,\n+5V); FAULT goes to the U2 mux.\nOne 0.1 uF sits at AVDD (pin 5), one\nat DVDD (pin 8), data sheet p.10."
 		(exclude_from_sim no)
 		(at 168.91 38.354 0)
 		(effects
