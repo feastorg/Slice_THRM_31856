@@ -264,20 +264,7 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [
-      [
-        "pin_to_pin|1473200|723900|5f713815-3dc1-49bd-a295-688b3d908603|5f713815-3dc1-49bd-a295-688b3d908603|/66043bca-a260-4915-9fce-8a51d324c687/9a654714-338c-43ce-bc05-201510bd1799|/66043bca-a260-4915-9fce-8a51d324c687/9a654714-338c-43ce-bc05-201510bd1799|/66043bca-a260-4915-9fce-8a51d324c687/9edcae2f-ff5a-46e5-b53e-30b31e19914f",
-        "SDO lines should all short and one talks at a time via CS"
-      ],
-      [
-        "pin_to_pin|1473200|723900|5f713815-3dc1-49bd-a295-688b3d908603|5f713815-3dc1-49bd-a295-688b3d908603|/66043bca-a260-4915-9fce-8a51d324c687/9da9e6d1-0052-403b-87cc-5d4d50756ec8|/66043bca-a260-4915-9fce-8a51d324c687/9da9e6d1-0052-403b-87cc-5d4d50756ec8|/66043bca-a260-4915-9fce-8a51d324c687/9edcae2f-ff5a-46e5-b53e-30b31e19914f",
-        "SDO lines should all short and one talks at a time via CS"
-      ],
-      [
-        "pin_to_pin|1473200|723900|5f713815-3dc1-49bd-a295-688b3d908603|5f713815-3dc1-49bd-a295-688b3d908603|/66043bca-a260-4915-9fce-8a51d324c687/a3423447-5118-4e55-89c3-f8d92345ea03|/66043bca-a260-4915-9fce-8a51d324c687/a3423447-5118-4e55-89c3-f8d92345ea03|/66043bca-a260-4915-9fce-8a51d324c687/9edcae2f-ff5a-46e5-b53e-30b31e19914f",
-        "SDO lines should all short and one talks at a time via CS"
-      ]
-    ],
+    "erc_exclusions": [],
     "meta": {
       "version": 0
     },
