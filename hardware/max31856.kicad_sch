@@ -1136,7 +1136,7 @@
 	)
 	(text "TYPICAL APPLICATION CIRCUIT FROM DATASHEET\n(MAX31856 19-7534 Rev 0, Figure 8, p.27)"
 		(exclude_from_sim no)
-		(at 132.08 95.885 0)
+		(at 132.08 166.37 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1344,18 +1344,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 55.88) (xy 203.2 59.69)
-		)
-		(stroke
-			(width 0.254)
-			(type default)
-			(color 194 0 194 1)
-		)
-		(uuid "50e494ae-ba5e-4cf5-85b8-f3a56460373f")
-	)
-	(wire
-		(pts
-			(xy 147.32 59.69) (xy 203.2 59.69)
+			(xy 147.32 59.69) (xy 160.02 59.69)
 		)
 		(stroke
 			(width 0.254)
@@ -1363,6 +1352,28 @@
 			(color 194 0 194 1)
 		)
 		(uuid "530112dd-d9b1-4aba-aeba-f158995cb3cf")
+	)
+	(wire
+		(pts
+			(xy 160.02 60.96) (xy 223.52 60.96)
+		)
+		(stroke
+			(width 0.254)
+			(type default)
+			(color 194 0 194 1)
+		)
+		(uuid "90825684-35a9-4a85-8e2b-09915bfa26b0")
+	)
+	(wire
+		(pts
+			(xy 160.02 59.69) (xy 160.02 60.96)
+		)
+		(stroke
+			(width 0.254)
+			(type default)
+			(color 194 0 194 1)
+		)
+		(uuid "e4d9175f-b1c2-4fa3-a229-d69e5f455cf7")
 	)
 	(wire
 		(pts
@@ -1374,17 +1385,6 @@
 			(color 0 0 0 1)
 		)
 		(uuid "5742d681-338a-46ae-91dd-06531e9d8df2")
-	)
-	(wire
-		(pts
-			(xy 203.2 55.88) (xy 223.52 55.88)
-		)
-		(stroke
-			(width 0.254)
-			(type default)
-			(color 194 0 194 1)
-		)
-		(uuid "5b850924-46d9-4dd1-b622-3259c6104f81")
 	)
 	(wire
 		(pts
@@ -1553,7 +1553,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 62.23) (xy 223.52 62.23)
+			(xy 147.32 62.23) (xy 162.56 62.23)
 		)
 		(stroke
 			(width 0.254)
@@ -1561,6 +1561,28 @@
 			(color 128 77 0 1)
 		)
 		(uuid "b5f8a127-38e2-460c-b730-08c648744b1d")
+	)
+	(wire
+		(pts
+			(xy 162.56 63.5) (xy 223.52 63.5)
+		)
+		(stroke
+			(width 0.254)
+			(type default)
+			(color 128 77 0 1)
+		)
+		(uuid "390e15ae-9ec6-4080-8de7-4d7ac36cf278")
+	)
+	(wire
+		(pts
+			(xy 162.56 62.23) (xy 162.56 63.5)
+		)
+		(stroke
+			(width 0.254)
+			(type default)
+			(color 128 77 0 1)
+		)
+		(uuid "a32ecfae-2963-4ec9-9f5a-e40836553508")
 	)
 	(wire
 		(pts
@@ -2633,7 +2655,7 @@
 	)
 	(hierarchical_label "DR"
 		(shape input)
-		(at 223.52 55.88 0)
+		(at 223.52 60.96 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2666,7 +2688,7 @@
 	)
 	(hierarchical_label "FAULT"
 		(shape input)
-		(at 223.52 62.23 0)
+		(at 223.52 63.5 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2915,25 +2937,25 @@
 		(dnp no)
 		(uuid "1b96d02a-767b-4fc4-bb44-5c52ed44ab7f")
 		(property "Reference" "C18"
-			(at 110.49 51.308 0)
+			(at 114.6 50.038 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Value" "0.01u"
-			(at 110.49 53.848 0)
+			(at 114.6 52.578 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
@@ -3199,7 +3221,7 @@
 			)
 		)
 		(property "Value" "MAX31856"
-			(at 120.142 53.34 0)
+			(at 119.507 53.086 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3685,25 +3707,25 @@
 		(dnp no)
 		(uuid "bd0e8d3a-6c12-440d-bf64-83e858911d0e")
 		(property "Reference" "C17"
-			(at 108.712 64.516 0)
+			(at 110.744 63.5 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Value" "0.1u"
-			(at 108.712 67.564 0)
+			(at 110.744 66.04 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
@@ -4044,7 +4066,7 @@
 	)
 	(text "All logic pins here are 3.3 V.\nLevel shifting is on the root sheet:\nCS, SCK, SDI come from U8 (74LVC245A,\n+3V3); SDO, DRDY go to U9 (74AHCT245,\n+5V); FAULT goes to the U2 mux.\nOne 0.1 uF sits at AVDD (pin 5), one\nat DVDD (pin 8), data sheet p.10.\nBIAS (pin 2) biases T- to 0.735 V at the\nterminal (p.11, Figure 8); T- is not tied\nto GND. The IC sits beside its terminal\n(\"MAX31856 Location\", p.28)."
 		(exclude_from_sim no)
-		(at 168.91 38.354 0)
+		(at 168.91 37.846 0)
 		(effects
 			(font
 				(size 1.27 1.27)
