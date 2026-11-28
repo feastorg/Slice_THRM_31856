@@ -95,10 +95,14 @@ The MAX31856s run from +3V3 (U3, MIC5225-3.3, 150 mA). The Nano is 5 V.
 
 ### Qwiic (J1)
 
-J1 is still powered from +5V on this revision. A Qwiic device expects
-3.3 V on its supply and I/O, and the slice's I2C bus (A4/A5 and the bus
-connector) is a 5 V bus, so J1 needs a level translator before it is safe
-for 3.3 V-only Qwiic boards. Do not plug a 3.3 V-only Qwiic board into J1.
+J1 is a 3.3 V Qwiic port. Its supply pin is on +3V3 (U3), and U10
+(PCA9306) translates between it and the slice's 5 V I2C bus (A4/A5 and
+the bus connector). R33/R34 pull the 5 V side up to +5V and R31/R32 pull
+the Qwiic side up to +3V3. U10's EN and VREF2 are tied and held at +5V
+through R30 (200k), so the translator is always on.
+
+The Qwiic device's current comes from U3 (150 mA), which also feeds the
+four MAX31856s and U8.
 
 ### Firmware
 
