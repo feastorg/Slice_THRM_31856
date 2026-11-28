@@ -21344,7 +21344,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "10k"
 			(at 125.73 33.02 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21524,7 +21524,7 @@
 		(at 115.57 54.61)
 		(uuid "aade00f1-0f0d-4faa-8e03-f7245a7bb4b8")
 	)
-	(text "Level shifting (Nano 5 V <-> MAX31856 3.3 V):\n- U8 74LVC245A on +3V3, A->B: CS1-4, SCK, SDI from the Nano (5 V-tolerant inputs)\n  drive the MAX31856 inputs at 3.3 V (VIH 2.1 V min).\n- U9 74AHCT245 on +5V, A->B: SDO and DRDY1-4 back to the Nano; TTL inputs\n  (VIH 2.0 V) read the MAX31856 output (VOH >= DVDD-0.4 V) with margin.\n- R21-R24 hold CS1-4 high (all MAX31856 deselected) while the Nano is in reset.\n- R25 holds SDO_3V3 low when no MAX31856 drives it (SDO is high-Z while CS is high).\n- SPI mode 1 or 3 (CPHA = 1), SCK up to 4 MHz (MAX31856 limit 5 MHz)."
+	(text "Level shifting (Nano 5 V <-> MAX31856 3.3 V):\n- U8 74LVC245A on +3V3, A->B: CS1-4, SCK, SDI from the Nano (5 V-tolerant inputs)\n  drive the MAX31856 inputs at 3.3 V (VIH 2.1 V min).\n- U9 74AHCT245 on +5V, A->B: SDO and DRDY1-4 back to the Nano; TTL inputs\n  (VIH 2.0 V) read the MAX31856 output (VOH >= DVDD-0.4 V) with margin.\n- R21-R24 hold CS1-4 high (all MAX31856 deselected) while the Nano is in reset.\n- R25 (10k) holds SDO_3V3 low when no MAX31856 drives it (SDO is high-Z while CS is high).\n  Release takes ~0.5 us, slower than AHCT's 20 ns/V input limit (SCLS233S): ignore MISO after CS rises.\n- SPI mode 1 or 3 (CPHA = 1), SCK up to 4 MHz (MAX31856 limit 5 MHz)."
 		(exclude_from_sim no)
 		(at 262.89 110.49 0)
 		(effects
@@ -24475,9 +24475,9 @@
 		)
 		(uuid "4176e075-e543-4dc1-ba32-971948b83705")
 	)
-	(text "Qwiic (J1) on +3V3 through U10 PCA9306: slot I2C (5 V, A4/A5, J2) on the 2 side,\nQwiic (3.3 V) on the 1 side. Channel A (pins 3/6) carries SDA, channel B (4/5) SCL:\nthe channels are identical, and this order routes both sides straight to J1 and the Nano.\nVREF1 = +3V3; VREF2 and EN tied, 200k to +5V.\nPull-ups: R33/R34 to +5V, R31/R32 to +3V3; values unverified until the\nPCA9306 data sheet is on hand."
+	(text "Qwiic (J1) on +3V3 through U10 PCA9306 (SO-8 footprint: NXP PCA9306D; TI makes no SO-8).\nSlot I2C (5 V, A4/A5, J2) on the 2 side, Qwiic (3.3 V) on the 1 side.\nSDA runs on the pins named SCL1/SCL2 (3/6) and SCL on SDA1/SDA2 (4/5): the two\nswitches are identical (TI SCPS113O 8.4), and this order routes both sides straight.\nEN tied to VREF2, 200k to +5V, C31 100 pF on VREF2 (SCPS113O 9.2.2.1).\nPull-ups 4.7k: R33/R34 to +5V, R31/R32 to +3V3 (SCPS113O 9.2.2.2)."
 		(exclude_from_sim no)
-		(at 312.42 123.19 0)
+		(at 312.42 124.46 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -24485,6 +24485,198 @@
 			(justify left bottom)
 		)
 		(uuid "070b841b-2ad3-4c25-b3b8-16aee3be2fb8")
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 396.24 139.7 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b470c37c-d049-4d67-b47e-e43fb9ee5eaf")
+		(property "Reference" "C31"
+			(at 398.78 138.43 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100pF"
+			(at 398.78 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 396.24 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 396.24 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 396.24 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e7791d86-3104-4ee4-a258-c709a8b3b984")
+		)
+		(pin "2"
+			(uuid "0f51919e-8c9b-438f-a7a0-dffecd8cb28e")
+		)
+		(instances
+			(project "BREAD_Slice"
+				(path "/66043bca-a260-4915-9fce-8a51d324c687"
+					(reference "C31")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 396.24 137.16) (xy 396.24 134.62)
+		)
+		(stroke
+			(width 0.254)
+			(type default)
+			(color 0 0 0 1)
+		)
+		(uuid "bbba2072-061a-423e-9715-dddb1c5164d7")
+	)
+	(label "QWIIC_EN"
+		(at 396.24 134.62 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c1e91e16-5630-4870-a7c9-f7d567dbb824")
+	)
+	(wire
+		(pts
+			(xy 396.24 142.24) (xy 396.24 144.78)
+		)
+		(stroke
+			(width 0.254)
+			(type default)
+			(color 0 0 0 1)
+		)
+		(uuid "9b0bb959-07b0-4b42-9d5b-00669032a943")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 396.24 144.78 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a68e433a-09ae-4afa-979d-6fbbc690bc50")
+		(property "Reference" "#PWR0110"
+			(at 396.24 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 405.13 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 396.24 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 396.24 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 396.24 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9287749e-df65-48b4-b124-c59de2c9a864")
+		)
+		(instances
+			(project "BREAD_Slice"
+				(path "/66043bca-a260-4915-9fce-8a51d324c687"
+					(reference "#PWR0110")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(sheet_instances
 		(path "/"

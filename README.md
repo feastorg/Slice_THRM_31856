@@ -89,7 +89,7 @@ The MAX31856s run from +3V3 (U3, MIC5225-3.3, 150 mA). The Nano is 5 V.
 - U9 (74AHCT245, on +5V) passes SDO and DRDY1-4 back to the Nano. Its TTL
   inputs (VIH 2.0 V) read the 3.3 V outputs with margin.
 - R21-R24 hold CS1-4 high while the Nano is in reset, so no converter is
-  selected. R25 holds SDO low when no converter drives it.
+  selected. R25 (10k) holds SDO low when no converter drives it.
 - U9 drives the Nano's MISO (D12) at all times: program the Nano over USB,
   not through an ICSP header plugged into the Nano.
 
@@ -99,7 +99,8 @@ J1 is a 3.3 V Qwiic port. Its supply pin is on +3V3 (U3), and U10
 (PCA9306) translates between it and the slice's 5 V I2C bus (A4/A5 and
 the bus connector). R33/R34 pull the 5 V side up to +5V and R31/R32 pull
 the Qwiic side up to +3V3. U10's EN and VREF2 are tied and held at +5V
-through R30 (200k), so the translator is always on.
+through R30 (200k), with C31 (100 pF) on VREF2, so the translator is
+always on.
 
 The Qwiic device's current comes from U3 (150 mA), which also feeds the
 four MAX31856s and U8.
