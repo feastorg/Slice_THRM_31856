@@ -24475,7 +24475,7 @@
 		)
 		(uuid "4176e075-e543-4dc1-ba32-971948b83705")
 	)
-	(text "Qwiic (J1) on +3V3 through U10 PCA9306 (SO-8 footprint: NXP PCA9306D; TI makes no SO-8).\nSlot I2C (5 V, A4/A5, J2) on the 2 side, Qwiic (3.3 V) on the 1 side.\nSDA runs on the pins named SCL1/SCL2 (3/6) and SCL on SDA1/SDA2 (4/5): the two\nswitches are identical (TI SCPS113O 8.4), and this order routes both sides straight.\nEN tied to VREF2, 200k to +5V, C31 100 pF on VREF2 (SCPS113O 9.2.2.1).\nPull-ups 4.7k: R33/R34 to +5V, R31/R32 to +3V3 (SCPS113O 9.2.2.2)."
+	(text "Qwiic (J1) on +3V3 through U10 PCA9306 (SO-8 footprint: NXP PCA9306D; TI makes no SO-8).\nSlot I2C (5 V, A4/A5, J2) on the 2 side, Qwiic (3.3 V) on the 1 side.\nSDA runs on the pins named SCL1/SCL2 (3/6) and SCL on SDA1/SDA2 (4/5): the two\nswitches are identical (TI SCPS113O 9.1.1), and this order routes both sides straight.\nEN tied to VREF2, 200k to +5V, C31 100 pF on VREF2 (SCPS113O 9.2.2.1).\nPull-ups 4.7k: R33/R34 to +5V, R31/R32 to +3V3 (SCPS113O 9.2.2.2)."
 		(exclude_from_sim no)
 		(at 312.42 124.46 0)
 		(effects
