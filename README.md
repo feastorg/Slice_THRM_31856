@@ -48,10 +48,66 @@
 
 
 ## Introduction
-[Provide a brief introduction to the project, including the motivation and goals. Explain the significance and context of the research.]
+A BREAD slice that reads four thermocouples. Each channel has its own
+MAX31856 (cold-junction compensated, linearized, types B/E/J/K/N/R/S/T),
+read by the slice's Arduino Nano over one shared SPI bus.
 
 ## Project Overview
-[Describe the project in more detail. This section can be split into subsections if necessary.]
+
+### Channels
+
+| Channel | Terminal | Converter | Nano CS | Nano DRDY | FAULT (through U2) |
+| ------- | -------- | --------- | ------- | --------- | ------------------ |
+| 1 | J4 (pin 1 T+, pin 2 T-) | U4 | D6 | A3 | A7 with D10 low |
+| 2 | J5 | U5 | D7 | A2 | A7 with D10 high |
+| 3 | J6 | U6 | D8 | A1 | A6 with D10 low |
+| 4 | J7 | U7 | D9 | A0 | A6 with D10 high |
+
+FAULT and DRDY are active low. The four FAULT lines reach the Nano's
+analog-only pins A6/A7 through U2 (CD74HC4053): D10 drives S1 and S2
+together, so one D10 level selects channels 1 and 3, the other 2 and 4.
+FAULT1-4 have 10k pull-ups to 3.3 V, so an idle line reads about 3.3 V
+on the 0-5 V ADC and an asserted fault reads near 0 V.
+
+### SPI
+
+- Shared SCK (D13), SDI/MOSI (D11), SDO/MISO (D12); one CS per channel.
+- SPI mode 1 or 3: the MAX31856 needs CPHA = 1 and accepts either
+  clock polarity (data sheet 19-7534 Rev 0, Table 5).
+- SCK up to 4 MHz (16 MHz / 4). The MAX31856 allows 5 MHz; the level
+  buffers add a few ns each way, so check SDO timing on the bench before
+  going faster than 4 MHz.
+- D10 is the AVR's hardware SS pin; it is an output here (FAULT_SW), which
+  keeps the SPI peripheral in master mode.
+
+### 3.3 V domain and level shifting
+
+The MAX31856s run from +3V3 (U3, MIC5225-3.3, 150 mA). The Nano is 5 V.
+
+- U8 (74LVC245A, on +3V3) passes CS1-4, SCK and SDI from the Nano to the
+  converters at 3.3 V. Its inputs accept 5 V.
+- U9 (74AHCT245, on +5V) passes SDO and DRDY1-4 back to the Nano. Its TTL
+  inputs (VIH 2.0 V) read the 3.3 V outputs with margin.
+- R21-R24 hold CS1-4 high while the Nano is in reset, so no converter is
+  selected. R25 (10k) holds SDO low when no converter drives it.
+- U9 drives the Nano's MISO (D12) at all times: program the Nano over USB,
+  not through an ICSP header plugged into the Nano.
+
+### Qwiic (J1)
+
+J1 is a 3.3 V Qwiic port. Its supply pin is on +3V3 (U3), and U10
+(PCA9306) translates between it and the slice's 5 V I2C bus (A4/A5 and
+the bus connector). R33/R34 pull the 5 V side up to +5V and R31/R32 pull
+the Qwiic side up to +3V3. U10's EN and VREF2 are tied and held at +5V
+through R30 (200k), with C31 (100 pF) on VREF2, so the translator is
+always on.
+
+The Qwiic device's current comes from U3 (150 mA), which also feeds the
+four MAX31856s and U8.
+
+### Firmware
+
+`firmware/` is empty; firmware is tracked separately.
 
 ## Installation
 [Provide instructions for installing any necessary software or hardware components.]
